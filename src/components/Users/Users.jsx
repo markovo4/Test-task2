@@ -3,27 +3,29 @@ import {styles} from './styles.js';
 import Delete from "../../assets/svg/Delete.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getUsers} from "../../redux/slices/localStorageSlice.js";
+import {deleteUser, getUsers} from "../../redux/slices/localStorageSlice.js";
 import AddUserModal from "../AddUserModal/index.js";
 
 const Users = () => {
-
     const {usersList} = useSelector(state => state.localStorage);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getUsers())
+        dispatch(getUsers());
     }, [dispatch]);
 
+    const handleDeleteUser = (name) => {
+        dispatch(deleteUser(name));
+    };
 
     return (
         <Box sx={styles.header}>
-            <Typography variant={'h2'} component={'h2'} sx={styles.title}>
+            <Typography variant="h2" component="h2" sx={styles.title}>
                 USERS
             </Typography>
 
             <Box sx={styles.filters}>
-                <AddUserModal button={<Button variant='outlined' sx={styles.buttonUsers}> Add User</Button>}/>
+                <AddUserModal button={<Button variant="outlined" sx={styles.buttonUsers}>Add User</Button>}/>
             </Box>
 
             <List sx={styles.list}>
@@ -45,7 +47,7 @@ const Users = () => {
                                 <TableCell align="right">{user.country.name}</TableCell>
                                 <TableCell align="right">{user.status.name}</TableCell>
                                 <TableCell align="right">
-                                    <Button>
+                                    <Button onClick={() => handleDeleteUser(user.name)}>
                                         <Delete/>
                                     </Button>
                                 </TableCell>
@@ -54,10 +56,8 @@ const Users = () => {
                     </TableBody>
                 </Table>
             </List>
-
-
         </Box>
     );
-}
+};
 
 export default Users;
