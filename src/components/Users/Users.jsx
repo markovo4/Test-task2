@@ -4,6 +4,7 @@ import Delete from "../../assets/svg/Delete.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getUsers} from "../../redux/slices/localStorageSlice.js";
+import AddUserModal from "../AddUserModal/index.js";
 
 const Users = () => {
 
@@ -22,12 +23,7 @@ const Users = () => {
             </Typography>
 
             <Box sx={styles.filters}>
-                <Button
-                    variant='outlined'
-                    sx={styles.buttonUsers}
-
-                >
-                    Add User</Button>
+                <AddUserModal button={<Button variant='outlined' sx={styles.buttonUsers}> Add User</Button>}/>
             </Box>
 
             <List sx={styles.list}>
