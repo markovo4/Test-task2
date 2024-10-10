@@ -25,7 +25,7 @@ const ModalTemplate = ({title, children, button, open, handleClose}) => {
                 aria-describedby={title}
             >
                 <Box sx={styles.container}>
-                    <Typography id={title} variant="h6" component="h2" sx={styles.modalTitle}>
+                    <Typography id={title} variant="h2" component="h2" sx={styles.modalTitle}>
                         {title}
                     </Typography>
                     {children}

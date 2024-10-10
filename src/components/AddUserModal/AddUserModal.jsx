@@ -1,6 +1,6 @@
 import {cloneElement, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import {Button, FormGroup} from '@mui/material';
+import {Box, Button, FormGroup} from '@mui/material';
 import {useFormik} from 'formik';
 import {useDispatch, useSelector} from 'react-redux';
 import {getUsers} from "../../redux/slices/localStorageSlice.js";
@@ -38,19 +38,22 @@ const AddUserModal = ({button}) => {
 
     return (
         <ModalTemplate
-            title="Log in"
+            title="ADD USER"
             button={buttonWithOnClick}
             open={modalAddUserOpen}
             handleClose={handleClose}
         >
             <form onSubmit={formik.handleSubmit} style={styles.formLogin}>
                 <FormGroup className="flex">
-                    <Button type="submit" variant="contained" sx={styles.loginButton}>
-                        Cancel
-                    </Button>
-                    <Button type="submit" variant="contained" sx={styles.loginButton}>
-                        Add
-                    </Button>
+                    <Box sx={styles.buttonGroup}>
+                        <Button onClick={handleClose} type="submit" variant="outlined" sx={styles.buttonCancel}>
+                            Cancel
+                        </Button>
+                        <Button type="submit" variant="outlined" sx={styles.buttonAdd}>
+                            Add
+                        </Button>
+                    </Box>
+
                 </FormGroup>
             </form>
         </ModalTemplate>
