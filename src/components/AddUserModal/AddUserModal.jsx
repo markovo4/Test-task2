@@ -10,8 +10,10 @@ import ModalTemplate from "../UI/ModalTemplate/index.js";
 import {styles} from './styles.js';
 
 const formInitValues = {
-    login: '',
-    password: '',
+    fullName: '',
+    department: '',
+    country: '',
+    status: '',
 };
 
 const AddUserModal = ({button}) => {
