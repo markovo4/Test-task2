@@ -44,7 +44,10 @@ const AddUserModal = ({button}) => {
             <form onSubmit={formik.handleSubmit} style={styles.formLogin}>
                 <FormGroup className="flex">
                     <Button type="submit" variant="contained" sx={styles.loginButton}>
-                        Log in
+                        Cancel
+                    </Button>
+                    <Button type="submit" variant="contained" sx={styles.loginButton}>
+                        Add
                     </Button>
                 </FormGroup>
             </form>
