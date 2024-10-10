@@ -75,6 +75,9 @@ export const styles = {
         }
     },
     filters: {
+        display: 'flex',
+        justifyContent: 'spacebetween',
+        alignItems: 'center',
         marginBottom: '40px'
     }
 }

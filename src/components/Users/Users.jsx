@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {deleteUser, getUsers} from "../../redux/slices/localStorageSlice.js";
 import AddUserModal from "../AddUserModal/index.js";
+import MultipleSelectCheckmarks from "../UI/Multiselect/index.js";
 
 const Users = () => {
     const {usersList} = useSelector(state => state.localStorage);
@@ -25,6 +26,9 @@ const Users = () => {
             </Typography>
 
             <Box sx={styles.filters}>
+                <MultipleSelectCheckmarks/>
+                <MultipleSelectCheckmarks/>
+                <MultipleSelectCheckmarks/>
                 <AddUserModal button={<Button variant="outlined" sx={styles.buttonUsers}>Add User</Button>}/>
             </Box>
 
