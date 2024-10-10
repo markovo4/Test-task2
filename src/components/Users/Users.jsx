@@ -1,14 +1,26 @@
 import {Box, Button, List, Table, TableBody, TableCell, TableHead, TableRow, Typography} from '@mui/material';
 import {styles} from './styles.js';
-import {users} from '../../assets/data.js';
 import Delete from "../../assets/svg/Delete.jsx";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {getUsers} from "../../redux/slices/localStorageSlice.js";
 
 const Users = () => {
+
+    const {usersList} = useSelector(state => state.localStorage);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUsers())
+    }, [dispatch]);
+
+
     return (
         <Box sx={styles.header}>
             <Typography variant={'h2'} component={'h2'} sx={styles.title}>
                 USERS
             </Typography>
+
 
             <List sx={styles.list}>
                 <Table sx={{minWidth: 650}} aria-label="user table">
@@ -22,7 +34,7 @@ const Users = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users.map((user, index) => (
+                        {usersList && usersList.map((user, index) => (
                             <TableRow key={index} sx={{'&:last-child td, &:last-child th': {border: 0}}}>
                                 <TableCell component="th" scope="row">{user.name}</TableCell>
                                 <TableCell>{user.department.name}</TableCell>
