@@ -1,0 +1,95 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%; /* Use the browser's default font size */
+    line-height: 1.5;
+    font-family: sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default padding from lists in specific contexts */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Links inherit color, and are not underlined by default */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset image, video, and iframe display */
+img,
+picture,
+video,
+iframe {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    border: 0;
+}
+
+/* Form elements reset */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+/* Remove button-specific default styles */
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+/* Remove table border spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Reset blockquote and figures */
+blockquote,
+figure {
+    margin: 0;
+}
+
+/* General heading and text resets */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Set base font size for paragraphs */
+p {
+    margin: 0;
+}

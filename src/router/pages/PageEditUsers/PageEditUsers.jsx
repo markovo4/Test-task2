@@ -1,10 +1,10 @@
-import {Box} from "@mui/joy";
 import TemplateBasePage from "../../../templates/TemplateBasePage";
+import EditUsers from "../../../components/EditUser/index.js";
 
 const PageEditUsers = () => {
     return (
         <TemplateBasePage>
-            <Box>Edit Users</Box>
+            <EditUsers/>
         </TemplateBasePage>
     )
 }
