@@ -21,6 +21,14 @@ const Users = () => {
                 USERS
             </Typography>
 
+            <Box sx={styles.filters}>
+                <Button
+                    variant='outlined'
+                    sx={styles.buttonUsers}
+
+                >
+                    Add User</Button>
+            </Box>
 
             <List sx={styles.list}>
                 <Table sx={{minWidth: 650}} aria-label="user table">
